@@ -28,16 +28,38 @@
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
+
     <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+    <link rel="stylesheet" href="http://localhost:3001/build/static/css/main.ea80b2bc.css">
+    <script src="http://localhost:3001/build/static/js/main.62559099.js"></script>
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
+    <link rel="stylesheet" href="http://localhost:3002/dist/css/app.e4f7a044.css">
+    <script src="http://localhost:3002/dist/js/app.8d91c95c.js"></script>
+    <script src="http://localhost:3002/dist/js/chunk-vendors.8207c636.js"></script>
+
+    <div id="microfrontend-root">
+      <!-- Comment custom-elements to switch in vertical splitting mode -->
+        <react-social-card></react-social-card>
+        <social-card-element></social-card-element>
+      <!-- to here -->
+    </div>
+
+    <!-- Uncomment this script to switch to the vertical splitting mode to load MFEs by path
+    <script type="text/javascript">
+      // These element types are defined by the above scripts
+      const webComponentsByRoute = {
+        '/react': 'react-social-card',
+        '/vue': 'social-card-element',
+      };
+      const webComponentType = webComponentsByRoute[window.location.pathname];
+
+      // Having determined the right web component custom element type,
+      // we now create an instance of it and attach it to the document
+      const root = document.getElementById('microfrontend-root');
+      const webComponent = document.createElement(webComponentType);
+      root.replaceChildren(webComponent);
+    </script>
     -->
   </body>
 </html>
